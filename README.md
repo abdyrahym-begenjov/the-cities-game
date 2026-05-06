@@ -1,7 +1,7 @@
 # the-cities-game
 # The Cities Game (Игра в города) 🏙️
 
-English 
+# English 
 My first Python project. It's a classic city-building game where you enter a city name starting with the last letter of the previous city.
 
 ## Features:
@@ -18,7 +18,7 @@ My first Python project. It's a classic city-building game where you enter a cit
 3. Run the script: `python "The Cities Game.py"`
 
 
-Русский
+# Русский
 Мой первый проект на Python. Это классическая игра в города, где нужно вводить название города на последнюю букву предыдущего.
 
 ## Особенности:
