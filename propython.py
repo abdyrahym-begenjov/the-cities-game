@@ -26,10 +26,10 @@ def pywrite(filename, value):
                     file.write(value)
             case filename if filename.endswith('.json'):
                 with open(filename, 'w', encoding='utf-8') as file:
-                    json.dump(value, file)
+                    json.dump(value, file, indent=4, ensure_ascii=False)
             case filename if filename.endswith('.pickle'):
                 with open(filename, 'wb') as file:
-                    pickle.dump(value, file)
+                    pickle.dump(value, file, indent=4, ensure_ascii=False)
             case _:
                 print('Error!!!')
     except FileNotFoundError:

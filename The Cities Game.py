@@ -1,14 +1,28 @@
 from random import choice
 from propython import pyread
 from time import sleep
+from translator import *
 
-print('The Cities Game')
-print('Creator: Abdyrahym Begenjov (GitHub: abdyrahym-begenjov)')
-start=input('Enter to start game: ')
-print('Loading...')
+print('English |  Русский')
+while True:
+    choose_language=input()
+    choose_language=choose_language.title().strip()
+    if choose_language=='English' or choose_language=='Русский':
+        break
+
+match choose_language:
+    case 'Русский':
+        lan='ru'
+        cities_list=pyread('new cities.json')
+    case 'English':
+        lan='en'
+        cities_list=pyread('cities.json')
+
+print(translator('The Cities Game', lan))
+print(f'{translator('Creator: Abdyrahym Begenjov', lan)}     (GitHub: abdyrahym-begenjov)')
+start=input(translator('Enter to start game: ', lan))
+print(translator('Loading...', lan))
 sleep(2)
-
-cities_list=pyread('cities.json')
 
 word=choice(cities_list)
 heart=3
@@ -19,15 +33,18 @@ cities_set=set()
 print(f'{number}) {word}')
 
 while True:
+    if word[-1] in ('ъ', 'ы', 'ь'):
+        word=word[:-1]
     city=word
-    word=input(f'You have {heart} hearts. Enter the word: ')
-    word=word.title().strip()
-    if heart==1:
-        print('Game Over!!!')
-        print(f'You received {points}')
+    if heart!=0:
+        word=input(f'{translator('You have', lan)} {heart} {translator('hearts. Enter the word: ', lan)}')
+        word=word.title().strip()
+    if heart==0:
+        print(translator('Game Over!!!', lan))
+        print(f'{translator('You received', lan)} {points} {translator('points.', lan)}')
         match points:
             case n if n>=60:
-                print('Absolute Champion!!! 🏆')
+                print(translator('Absolute Champion!!! 🏆', lan))
             case n if n>=50:
                 print('⭐⭐⭐⭐⭐')
             case n if n>=40:
@@ -39,11 +56,11 @@ while True:
             case n if n>=10:
                 print('⭐')
             case _:
-                print('Loser!!!')
+                print(translator('Loser!!!', lan))
         break
     elif word=='':
-        print('You must enter the city!!!')
-        print('Error!!!')
+        print(translator('You must enter the word!!!', lan))
+        print(translator('Error!!!', lan))
         heart-=1
         word=city
     elif word[0]==city[-1].upper() and word in cities_list and word not in cities_set:
@@ -53,10 +70,10 @@ while True:
         cities_set.add(word)
     else:
         if word in cities_set:
-            print('This word has already been used.')
-        print('Error!!!')
+            print(translator('This word has already been used.', lan))
+        print(translator('Error!!!', lan))
         print(word)
         heart-=1
-        word=word[0]
+        word=city
 
-end=input('Enter to quit: ')
+end=input(translator('Enter to exit: ', lan))
