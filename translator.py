@@ -15,7 +15,21 @@ rutranslate={
     'Enter to start game: ': 'Нажмите, чтобы начать игру: ',
     'Loading...': 'Загрузка...',
     'You must enter the word!!!': 'Вы должны ввести слово!!!',
-    'Enter to exit: ': 'Введите для выхода: '
+    'Enter to exit: ': 'Введите для выхода: ',
+    'Enter your name: ': 'Введите свое имя: ',
+    'Enter to exit mode: ': 'Войдите в режим выхода: ',
+    'Game      Records      Settings      Exit': 'Игра      Рекорды      Настройки      Выход',
+    'Choose the mode of game: ': 'Выберите режим игры: ',
+    'Do you want to change parametrs (Enter \"Name\" or \"Language\"): ': 'Хотите ли вы изменить параметры (введите \"Имя\" или \"Язык\"): ',
+    'Do you want to exit: ': 'Вы хотите выйти: ',
+    'Goodbye!!!': 'До свидания!!',
+    'Name:': 'Имя:',
+    'Language:': 'Язык:',
+    'Return': 'Вернуться',
+    'Game': 'Игра',
+    'Records': 'Рекорды',
+    'Settings': 'Настройки',
+    'Exit': 'Выход'
              }
 
 
