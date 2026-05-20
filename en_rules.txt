@@ -1,0 +1,42 @@
+🎮 THE CITIES GAME: OFFICIAL RULES & GAME MODES
+
+1. OBJECTIVE OF THE GAME 🎯
+
+The objective of "The Cities Game" is to test your geographical knowledge by creating the longest possible continuous chain of city names. You play solo, challenge your vocabulary, track your personal high scores, and compete against other players on the leaderboard.
+
+2. CORE GAMEPLAY RULES 📜
+
+* The Chain Mechanism: The game begins with a random city automatically chosen from the database. On your turn, you must enter a city name whose first letter matches the last letter of the previous city.
+* Special Ending Letters: If a city ends with the letters **ъ**, **ы**, or **ь**, these specific characters are skipped. You must instead use the letter immediately preceding them (the second-to-last letter) to start your next city.
+* Database Verification: Every city you enter must exist within the game's official dictionary database. Imaginary cities or spelling mistakes will not be accepted.
+* No Duplicates: You are not allowed to repeat the same city name within a single game session. Each city can only be used once.
+* Input Requirements: You cannot leave your turn blank. Pressing enter without typing a city name will result in an error.
+
+3. THE HEARTS & LIVES SYSTEM ❤️
+
+* Starting Health: You begin each game session with exactly 3❤️.
+* Losing a Heart: You will lose 1 Heart if you make any mistake, such as entering an incorrect letter, a duplicate city, an unrecognized name, or an empty input.
+* The Retry Rule: When you make a mistake, the game does not advance to a new word. The chain pauses, and you must try again using the exact same previous city until you provide a valid answer or run out of lives.
+* Game Over: The game ends immediately when your remaining Hearts reach 0.
+
+4. SCORING AND CHAMPION RANKS 🏆
+
+Each valid city you add to the chain successfully earns you 1 point. When the game ends, your final score is calculated, and you are awarded one of the following official titles based on your performance:
+
+* Score of 60 or more: Absolute Champion!!! 🏆
+* Score of 50 to 59: 5 Stars (⭐⭐⭐⭐⭐)
+* Score of 40 to 49: 4 Stars (⭐⭐⭐⭐)
+* Score of 30 to 39: 3 Stars (⭐⭐⭐)
+* Score of 20 to 29: 2 Stars (⭐⭐)
+* Score of 10 to 19: 1 Star (⭐)
+* Score below 10: Loser!!!
+
+Your personal high score is automatically tracked and updated under your username.
+
+5. EXPLANATION OF GAME MODES & MENUS 🕹️
+
+* Game: This mode launches an active game session. It loads your current profile configuration, picks a random starting city, and begins counting your points.
+* Records: This opens the global Leaderboard. It dynamically sorts all saved player names from the highest score to the lowest score so you can see who holds the top records.
+* Settings: This allows you to manage your profile at any time. You can change your player name or switch the entire game language. Selecting "English" switches the game to an English city database, while selecting "Русский" switches it to a Russian city database.
+* Rule: This mode displays this comprehensive rulebook directly inside the console, giving players a quick way to review rules, vocabulary exceptions, scoring criteria, and menu descriptions without leaving the app.
+* Exit: This option safely closes the game application. It prompts you for a quick confirmation to ensure you do not close your game by accident, ensuring all of your saved high scores remain intact.

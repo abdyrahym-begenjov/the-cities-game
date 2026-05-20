@@ -1,5 +1,5 @@
 rutranslate={
-    'The Cities Game': 'Игра в Города',
+    'The Cities Game 🏙️': 'Игра в Города',
     'Enter the word: ': 'Введите слово: ',
     'Error!!!': 'Ошибка!!!',
     'Game Over!!!': 'Игра окончена!!!',
@@ -18,18 +18,20 @@ rutranslate={
     'Enter to exit: ': 'Введите для выхода: ',
     'Enter your name: ': 'Введите свое имя: ',
     'Enter to exit mode: ': 'Войдите в режим выхода: ',
-    'Game      Records      Settings      Exit': 'Игра      Рекорды      Настройки      Выход',
-    'Choose the mode of game: ': 'Выберите режим игры: ',
-    'Do you want to change parametrs (Enter \"Name\" or \"Language\"): ': 'Хотите ли вы изменить параметры (введите \"Имя\" или \"Язык\"): ',
+    'Game      Rules      Records      Settings      Exit': 'Игра      Правилы      Рекорды      Настройки      Выход',
+    'Choose a game mode: ': 'Выберите режим игры: ',
+    'Do you want to change parameters (Enter \"Name\" or \"Language\"): ': 'Хотите ли вы изменить параметры (введите \"Имя\" или \"Язык\"): ',
     'Do you want to exit: ': 'Вы хотите выйти: ',
     'Goodbye!!!': 'До свидания!!',
-    'Name:': 'Имя:',
-    'Language:': 'Язык:',
+    'Name': 'Имя',
+    'Language': 'Язык',
     'Return': 'Вернуться',
     'Game': 'Игра',
+    'Rules': 'Правилы',
     'Records': 'Рекорды',
     'Settings': 'Настройки',
-    'Exit': 'Выход'
+    'Exit': 'Выход',
+    'LEADERBOARD': 'ЛИДЕРБОРД'
              }
 
 
