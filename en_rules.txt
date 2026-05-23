@@ -36,7 +36,7 @@ Your personal high score is automatically tracked and updated under your usernam
 5. EXPLANATION OF GAME MODES & MENUS 🕹️
 
 * Game: This mode launches an active game session. It loads your current profile configuration, picks a random starting city, and begins counting your points.
-* Records: This opens the global Leaderboard. It dynamically sorts all saved player names from the highest score to the lowest score so you can see who holds the top records.
+* Highscores: This opens the global Leaderboard. It dynamically sorts all saved player names from the highest score to the lowest score so you can see who holds the top records.
 * Settings: This allows you to manage your profile at any time. You can change your player name or switch the entire game language. Selecting "English" switches the game to an English city database, while selecting "Русский" switches it to a Russian city database.
 * Rule: This mode displays this comprehensive rulebook directly inside the console, giving players a quick way to review rules, vocabulary exceptions, scoring criteria, and menu descriptions without leaving the app.
 * Exit: This option safely closes the game application. It prompts you for a quick confirmation to ensure you do not close your game by accident, ensuring all of your saved high scores remain intact.

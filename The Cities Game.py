@@ -3,13 +3,13 @@ from propython import pyread, pywrite
 from time import sleep
 from translator import *
 from subprocess import run
-import platform
+from platform import system
 
 base=pyread('base.json')
 data=pyread('data.json')
 
 def clear_screen():
-    current_os=platform.system()
+    current_os=system()
     if current_os=='Windows':
         run(["cls"], shell=True)
     else:
@@ -47,16 +47,15 @@ name=data['name']
 lang=data['language']
 cities_list=data['cities']
 
-if lang=='' and cities_list=='':
+if lang=='' and cities_list==[]:
     lang, cities_list=enter_lang()
-
 if name=='':
     name=enter_name()
 
 while True:
     print(translator('The Cities Game 🏙️', lang))
     print(f'{translator('Creator: Abdyrahym Begenjov', lang)}     (GitHub: abdyrahym-begenjov)')
-    print(translator('Game      Rules      Records      Settings      Exit', lang))
+    print(translator('Game      Rules      Highscores      Settings      Exit', lang))
     mode=input(translator('Choose a game mode: ', lang))
     mode=mode.title().strip()
     if lang=='ru':
@@ -126,6 +125,7 @@ while True:
                 pywrite('base.json', base)
             end=input(translator('Enter to exit mode: ', lang))
             clear_screen()
+    
         case 'Rules':
             if lang=='ru':
                 rules=pyread('ru_rules.txt')
@@ -134,13 +134,15 @@ while True:
             print(rules)
             end=input(translator('Enter to exit mode: ', lang))
             clear_screen()
-        case 'Records':
+
+        case 'Highscores':
             print(translator('LEADERBOARD:', lang))
             base=dict(sorted(base.items(), key=lambda x: x[1], reverse=True))
             for i, j in base.items():
                 print(f'{i}: {j}')
             end=input(translator('Enter to exit mode: ', lang))
             clear_screen()
+    
         case 'Settings':
             while True:
                 print(f'{translator('Name', lang)}: {data['name']}')
@@ -161,11 +163,11 @@ while True:
             clear_screen()
 
         case 'Exit':
-            exit_confirm=input(translator('Do you want to exit: ', lang))
+            exit_confirm=input(translator('Do you want to exit (\"Yes\" or \"No\"): ', lang))
             exit_confirm=exit_confirm.title().strip()
             if lang=='ru':
                 exit_confirm=translator(exit_confirm, 'en1')
-            if exit_confirm=='Return':
+            if exit_confirm=='No':
                 clear_screen()
             else:
                 print(translator('Goodbye!!!', lang))

@@ -6,7 +6,7 @@ rutranslate={
     'You win!!!': 'Вы победили!!!',
     'This word has already been used.': 'Это слово уже было использовано.',
     'You have': 'У вас есть',
-    'hearts. Enter the word: ': 'сердец. Введите слово: ',
+    '❤️. Enter the word: ': '❤️. Введите слово: ',
     'You received': 'Вы получили',
     'points.': 'баллов.',
     'Absolute Champion!!! 🏆': 'Абсолютный чемпион!!! 🏆',
@@ -18,20 +18,20 @@ rutranslate={
     'Enter to exit: ': 'Введите для выхода: ',
     'Enter your name: ': 'Введите свое имя: ',
     'Enter to exit mode: ': 'Войдите в режим выхода: ',
-    'Game      Rules      Records      Settings      Exit': 'Игра      Правилы      Рекорды      Настройки      Выход',
+    'Game      Rules      Highscores      Settings      Exit': 'Игра      Правилы      Рекорды      Настройки      Выход',
     'Choose a game mode: ': 'Выберите режим игры: ',
     'Do you want to change parameters (Enter \"Name\" or \"Language\"): ': 'Хотите ли вы изменить параметры (введите \"Имя\" или \"Язык\"): ',
-    'Do you want to exit: ': 'Вы хотите выйти: ',
+    'Do you want to exit (\"Yes\" or \"No\"): ': 'Вы хотите завершить (\"Да\" или \"Нет\"): ',
     'Goodbye!!!': 'До свидания!!',
     'Name': 'Имя',
     'Language': 'Язык',
-    'Return': 'Вернуться',
+    'No': 'Нет',
     'Game': 'Игра',
     'Rules': 'Правилы',
-    'Records': 'Рекорды',
+    'Highscores': 'Рекорды',
     'Settings': 'Настройки',
     'Exit': 'Выход',
-    'LEADERBOARD': 'ЛИДЕРБОРД'
+    'LEADERBOARD:': 'ЛИДЕРБОРД:'
              }
 
 
