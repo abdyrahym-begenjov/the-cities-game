@@ -31,6 +31,8 @@ rutranslate={
     'Highscores': 'Рекорды',
     'Settings': 'Настройки',
     'Exit': 'Выход',
+    'NAME |': 'ИМЯ |',
+    'POINTS': 'БАЛЛЫ',
     'LEADERBOARD:': 'ЛИДЕРБОРД:'
              }
 

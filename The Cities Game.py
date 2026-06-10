@@ -87,7 +87,7 @@ while True:
             clear_screen()
 
         case 'Highscores':
-            leaderboard(base, lang)
+            draw_leaderboard(base, lang)
             end=input(translator('Enter to exit mode: ', lang))
             clear_screen()
     

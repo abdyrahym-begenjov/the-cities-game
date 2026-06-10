@@ -57,11 +57,26 @@ def star(points, lang):
         case _:
             return translator('Loser!!!', lang)
 
-def leaderboard(base, lang):
+def draw_leaderboard(base, lang):
     print(translator('LEADERBOARD:', lang))
-    base=dict(sorted(base.items(), key=lambda x: x[1], reverse=True))
+    base=list(base.items())
+    base.sort(key=lambda x: x[1], reverse=True)
+    base=dict(base)
+
+    line1=f'|{translator('NAME |', lang):>18} {translator('POINTS', lang):<16}|'
+    line='-'*len(line1)
+    print(line)
+    print(line1)
+    print(line)
+
     for i, j in base.items():
-        print(f'{i}: {j}')
+        name=i
+        a=str(j)
+        name1=f'{name} |'
+    
+        line2=f'|{name1:>18} {a:<16}|'
+        print(line2)
+        print(line)
 
 def new_word(word, lang):
     word=word.strip().title()
