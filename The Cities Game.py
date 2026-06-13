@@ -15,10 +15,14 @@ while True:
     if lang=='' and cities_list==[]:
         lang, cities_list=enter_lang(data)
         clear_screen()
+
     if name=='':
         name=enter_name(data, lang)
         clear_screen()
     
+    if name not in base:
+        base[name]=0
+
     print(translator('The Cities Game 🏙️', lang))
     print(f'{translator('Creator: Abdyrahym Begenjov', lang)}     (GitHub: abdyrahym-begenjov)')
     print(translator('Game      Rules      Highscores      Settings      Exit', lang))
@@ -30,6 +34,7 @@ while True:
             start=input(translator('Enter to start game: ', lang))
             print(translator('Loading...', lang))
             sleep(2)
+            clear_screen()
 
             word=choice(cities_list)
             hearts=3
@@ -37,41 +42,41 @@ while True:
             number=1
             cities_set=set()
 
-            print(f'{number}) {word}')
-
             while True:
                 if word[-1] in ('ъ', 'ы', 'ь'):
                     word=word[:-1]
                 city=word
+                if len(cities_set)==len(cities_list):
+                    print(translator('You are ABSOLUTE CHAMPION!!!', lang))
+                    print(f'{translator('You received', lang)} {points} {translator('points.', lang)}')
+                    print(star(points, lang))
+                    break
                 if hearts!=0:
+                    print(f'{number}) {word}')
                     word=input(f'{translator('You have', lang)} {hearts} {translator('❤️. Enter the word: ', lang)}')
                     word=word.title().strip()
                 if hearts<=0:
                     print(translator('Game Over!!!', lang))
                     print(f'{translator('You received', lang)} {points} {translator('points.', lang)}')
                     print(star(points, lang))
-                    break
+                    break    
                 elif word=='':
                     print(translator('You must enter the word!!!', lang))
-                    print(translator('Error!!!', lang))
-                    hearts-=1
+                    word=city
+                elif word in cities_set:
+                    print(translator('This word has already been used.', lang))
                     word=city
                 elif word[0]==city[-1].upper() and word in cities_list and word not in cities_set:
                     number+=1
-                    print(f'{number}) {word}')
                     points+=1
                     cities_set.add(word)
                 else:
-                    if word in cities_set:
-                        print(translator('This word has already been used.', lang))
                     print(translator('Error!!!', lang))
                     hearts-=1
                     word=city
             
-            if name not in base:
-                base[name]=points
-                pywrite('base.json', base)
             if base[name]<points:
+                print(translator('You\'ve broken a new highscore!!!', lang))
                 base[name]=points
                 pywrite('base.json', base)
             end=input(translator('Enter to exit mode: ', lang))

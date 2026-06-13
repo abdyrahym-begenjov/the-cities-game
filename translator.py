@@ -33,7 +33,9 @@ rutranslate={
     'Exit': 'Выход',
     'NAME |': 'ИМЯ |',
     'POINTS': 'БАЛЛЫ',
-    'LEADERBOARD:': 'ЛИДЕРБОРД:'
+    'LEADERBOARD:': 'ЛИДЕРБОРД:',
+    'You are ABSOLUTE CHAMPION!!!': 'Вы АБСОЛЮТНЫЙ ЧЕМПИОН!!!',
+    'You\'ve broken a new highscore!!!': 'Вы побили новый рекорд!!!'
              }
 
 
