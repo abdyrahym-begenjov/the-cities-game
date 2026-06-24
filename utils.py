@@ -2,6 +2,9 @@ from propython import *
 from translator import *
 from subprocess import run
 from platform import system
+from random import randint
+from players import *
+from time import sleep
 
 def clear_screen():
     current_os=system()
@@ -39,7 +42,74 @@ def enter_name(data, lang):
             data['name']=name
             pywrite('data.json', data)
             return name
-        
+
+def game(p, lst1, base, lang):
+    while True:
+        name=input(f'[{p[0]}] {translator('Enter name: ', lang)}')
+        p.pop(0)
+        if name=='':
+            print(translator('Error!!!', lang))
+        elif name in lst1:
+            print(translator('This name is already taken', lang))
+        else:
+            if name not in base:
+                base[name]=0
+            break
+    return name
+
+def selection_of_order(lst1, game_count, lang, Player):
+    while True:
+        lst=[]
+        for i in lst1:
+            move=randint(1, 6)
+            lst.append((i, move))
+        lst.sort(key=lambda x: x[1], reverse=True)    
+        result=list(map(lambda x: x[1], lst))
+        nr, r=[], []
+        for i in result:
+            if i not in nr:
+                nr.append(i)
+            else:
+                r.append(i)
+        if r==[]:
+            print(translator('Moment of Truth 🥁', lang))
+            match game_count:
+                case 2:
+                    sleep(2)
+                case 3:
+                    sleep(4)
+                case 4:
+                    sleep(6)
+            result=[f'{i}: {c}' for i, c in lst]
+            text=', '.join(result)
+            print(text)
+            break
+        else:
+            continue
+
+    new_lst=list(map(lambda x: x[0], lst))
+    result1=[Player(i) for i in new_lst]
+    return result1
+
+def choose_parameter(lang):
+    while True:
+        print(translator('Parameters of game: Easy (10), Normal (20), Hard (30)', lang))
+        parameter=input(translator('Enter the parameter of game: ', lang))
+        parameter=new_word(parameter, lang)
+        match parameter:
+            case 'Easy':
+                max_points=10
+                break
+            case 'Normal':
+                max_points=20
+                break
+            case 'Hard':
+                max_points=30
+                break
+            case _:
+                print(translator('Error!!!', lang))
+    return max_points
+
 def star(points, lang):
     match points:
         case n if n>=60:
