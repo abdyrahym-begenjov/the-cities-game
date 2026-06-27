@@ -1,7 +1,11 @@
 from translator import *
-from random import choice
-from propython import pywrite
-from players import *
+
+class Player:
+    def __init__(self, name):
+        self.name=name
+        self.hearts=3
+        self.points=0
+        self.out=False
 
 def play(obj, word, max_points, cities_list, cities_set, losers, have_winner, lang):
     if obj.out==False:

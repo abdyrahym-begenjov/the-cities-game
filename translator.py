@@ -1,5 +1,5 @@
 rutranslate={
-    'The Cities Game 🏙️': 'Игра в Города',
+    'The Cities Game 🏙️': 'Игра в Города 🏙️',
     'Enter the word: ': 'Введите слово: ',
     'Error!!!': 'Ошибка!!!',
     'Game Over!!!': 'Игра окончена!!!',
@@ -52,7 +52,8 @@ rutranslate={
     'Enter the parameter of game: ': 'Введите параметр игры: ',
     'Infinity': 'Бесконечность',
     'Party': 'Вечеринка',
-    'Points:': 'Баллы',
+    'Overall Result': 'Общий Результат',
+    'Points:': 'Баллы:',
     'You have received the maximum points': 'Вы получили максимальные очки',
     'You are WINNER!!!': 'Вы ПОБЕДИТЕЛЬ!!!',
     'You are eliminated from the game!!!': 'Вы выбываете из игры!!!',

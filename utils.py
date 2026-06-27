@@ -3,7 +3,6 @@ from translator import *
 from subprocess import run
 from platform import system
 from random import randint
-from players import *
 from time import sleep
 
 def clear_screen():
@@ -46,14 +45,14 @@ def enter_name(data, lang):
 def game(p, lst1, base, lang):
     while True:
         name=input(f'[{p[0]}] {translator('Enter name: ', lang)}')
-        p.pop(0)
         if name=='':
             print(translator('Error!!!', lang))
         elif name in lst1:
             print(translator('This name is already taken', lang))
         else:
             if name not in base:
-                base[name]=0
+                base[name]=[0, 0]
+            p.pop(0)
             break
     return name
 
@@ -87,9 +86,9 @@ def selection_of_order(lst1, game_count, lang, Player):
         else:
             continue
 
-    new_lst=list(map(lambda x: x[0], lst))
+    new_lst=[i[0] for i in lst]
     result1=[Player(i) for i in new_lst]
-    return result1
+    return result1, new_lst
 
 def choose_parameter(lang):
     while True:
@@ -128,12 +127,15 @@ def star(points, lang):
             return translator('Loser!!!', lang)
 
 def draw_leaderboard(base, lang):
-    print(translator('LEADERBOARD:', lang))
     base=list(base.items())
-    base.sort(key=lambda x: x[1], reverse=True)
+    base.sort(key=lambda x: x[1][0]+x[1][1], reverse=True)
     base=dict(base)
 
-    line1=f'|{translator('NAME |', lang):>18} {translator('POINTS', lang):<16}|'
+    lst=['Infinity', 'Party', 'Overall Result']
+    lst=[translator(i, lang) for i in lst]
+    lst=[f'{i.upper().strip():<16}|' for i in lst]
+    lst=' '.join(lst)
+    line1=f'|{translator('NAME |', lang):>18} {lst:<16}'
     line='-'*len(line1)
     print(line)
     print(line1)
@@ -141,10 +143,12 @@ def draw_leaderboard(base, lang):
 
     for i, j in base.items():
         name=i
-        a=str(j)
+        a=str(j[0])
+        b=str(j[1])
+        c=j[0]+j[1]
         name1=f'{name} |'
     
-        line2=f'|{name1:>18} {a:<16}|'
+        line2=f'|{name1:>18} {a:<16}| {b:<16}| {c:<16}|'
         print(line2)
         print(line)
 
