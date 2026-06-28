@@ -90,7 +90,7 @@ def mode_party(name, cities_list, base, lang):
 
     while True:
         for player in result1:
-            player.points, player.out, player.hearts, city, cities_set, losers, have_winner=play(player, city, max_points, cities_list, cities_set, losers, have_winner, lang)
+            player.points, player.out, player.hearts, city, cities_set, losers, have_winner=play(player, city, max_points, result1, cities_list, cities_set, losers, have_winner, lang)
             if have_winner==True:
                 final=have_winner
                 break

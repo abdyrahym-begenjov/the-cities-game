@@ -5,7 +5,7 @@ rutranslate={
     'Game Over!!!': 'Игра окончена!!!',
     'This word has already been used.': 'Это слово уже было использовано.',
     'You have': 'У вас есть',
-    '❤️. Enter the word: ': '❤️. Введите слово: ',
+    '❤️. Enter the word or ability: ': '❤️. Введите слово или способность: ',
     'You received': 'Вы получили',
     'points.': 'баллов.',
     'Absolute Champion!!! 🏆': 'Абсолютный чемпион!!! 🏆',
@@ -59,7 +59,19 @@ rutranslate={
     'You are eliminated from the game!!!': 'Вы выбываете из игры!!!',
     'Choose a game mode: ': 'Выберите режим игры: ',
     'Infinity          Party': 'Бесконечность          Вечеринка',
-    'Enter name: ': 'Введите имя: '
+    'Enter name: ': 'Введите имя: ',
+    'Blaster': 'Бластер',
+    'Game Pass': 'Пропуск',
+    'Replacement': 'Замена',
+    'PASS': 'ПРОПУСК',
+    'BLASTER 🔫': 'БЛАСТЕР 🔫',
+    'Who do you want to use the blaster on?: ': 'На кого вы хотите использовать бластер?: ',
+    'Don\'t write your name!!!': 'Не пишите свое имя!!!',
+    'This player is out. Choose another one.': 'Этот игрок выбыл. Выберите другого.',
+    'NO': 'НЕТ',
+    'GAME PASS 🦘': 'ПРОПУСК НА ИГРУ 🦘',
+    'REPLACEMENT 🦝': 'ЗАМЕНА 🦝',
+    'There are no suitable cities': 'Подходящих городов нет'
              }
 
 
