@@ -71,7 +71,9 @@ rutranslate={
     'NO': 'НЕТ',
     'GAME PASS 🦘': 'ПРОПУСК НА ИГРУ 🦘',
     'REPLACEMENT 🦝': 'ЗАМЕНА 🦝',
-    'There are no suitable cities': 'Подходящих городов нет'
+    'There are no suitable cities': 'Подходящих городов нет',
+    'You don\'t get anything because you took the last place.': 'Вы ничего не получаете, т.к вы заняли последнее место.',
+    'Since you didn\'t use any abilities, you get double points': 'Поскольку вы не использовали никаких способностей, вы получаете двойные очки'
              }
 
 

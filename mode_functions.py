@@ -96,22 +96,29 @@ def mode_party(name, cities_list, base, lang):
                 break
         spisok=[]
         for player in result1:
-            spisok.append((player.name, player.points))
+            spisok.append((player.name, player.points, player))
         spisok.sort(key=lambda x: (x[1], new_lst.index(x[0])), reverse=True)
         spisok1=[i[0] for i in spisok]
         spisok2=[i[1] for i in spisok]
         if final==True or len(losers)==game_count-1:
+            winner=spisok[0][2]
+            winner.points+=max_points
+            if winner.blaster==True and winner.replacement==True and winner.game_pass==True:
+                print(f'[{winner.name}]')
+                print(translator('Since you didn\'t use any abilities, you get double points', lang))
+                winner.points*=2
+                print('-'*125)
             if game_count==2:
-                print(f'1) {spisok1[0]} - {translator('WINNER', lang)} 😎🏆. {translator('Points:', lang)} {spisok2[0]}')
+                print(f'1) {spisok1[0]} - {translator('WINNER', lang)} 😎🏆. {translator('Points:', lang)} {winner.points}')
                 print(f'2) {spisok1[1]} - {translator('LOSER', lang)} 😫. {translator('Points:', lang)} {spisok2[1]}')
                 break
             elif game_count==3:
-                print(f'1) {spisok1[0]} - {translator('WINNER', lang)} 😎🏆. {translator('Points:', lang)} {spisok2[0]}')
+                print(f'1) {spisok1[0]} - {translator('WINNER', lang)} 😎🏆. {translator('Points:', lang)} {winner.points}')
                 print(f'2) {spisok1[1]} - {translator('ROUND-UP', lang)} 😀. {translator('Points:', lang)} {spisok2[1]}')
                 print(f'3) {spisok1[2]} - {translator('LOSER', lang)} 😫. {translator('Points:', lang)} {spisok2[2]}')
                 break
             elif game_count==4:
-                print(f'1) {spisok1[0]} - {translator('WINNER', lang)} 😎🏆. {translator('Points:', lang)} {spisok2[0]}')
+                print(f'1) {spisok1[0]} - {translator('WINNER', lang)} 😎🏆. {translator('Points:', lang)} {winner.points}')
                 print(f'2) {spisok1[1]} - {translator('ROUND-UP', lang)} 😀. {translator('Points:', lang)} {spisok2[1]}')
                 print(f'3) {spisok1[2]} - {translator('BRONZE MEDALIST', lang)} 😐. {translator('Points:', lang)} {spisok2[2]}')
                 print(f'4) {spisok1[3]} - {translator('LOSER', lang)} 😫. {translator('Points:', lang)} {spisok2[3]}')

@@ -48,7 +48,11 @@ def play(obj, word, max_points, result1, cities_list, cities_set, losers, have_w
                                             print('-'*125)
                                             print(f'[{i.name}]')
                                             print(translator('You are eliminated from the game!!!', lang))
-                                            print(f'{translator('You received', lang)} {i.points} {translator('points.', lang)}')
+                                            if losers==[]:
+                                                print(translator('You don\'t get anything because you took the last place.', lang))
+                                                i.points=0
+                                            else:
+                                                print(f'{translator('You received', lang)} {i.points} {translator('points.', lang)}')
                                             print('-'*125)
                                             print(f'[{obj.name}]')
                                             i.out=True
@@ -101,10 +105,13 @@ def play(obj, word, max_points, result1, cities_list, cities_set, losers, have_w
         if obj.points>=max_points:
             print(translator('You have received the maximum points', lang))
             print(translator('You are WINNER!!!', lang))
-            have_winner=True
         if obj.hearts<=0:
             print(translator('You are eliminated from the game!!!', lang))
-            print(f'{translator('You received', lang)} {obj.points} {translator('points.', lang)}')
+            if losers==[]:
+                print(translator('You don\'t get anything because you took the last place.', lang))
+                obj.points=0
+            else:
+                print(f'{translator('You received', lang)} {obj.points} {translator('points.', lang)}')
             obj.out=True
             losers.append(obj.name)
         print('-'*125)
