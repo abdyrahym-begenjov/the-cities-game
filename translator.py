@@ -39,7 +39,7 @@ rutranslate={
     'ROUND-UP': 'ВТОРОЕ МЕСТО',
     'BRONZE MEDALIST': 'БРОНЗОВЫЙ ПРИЗЁР',
     'LOSER': 'ЛУЗЕР',
-    'This name is already taken': '"Это имя уже занято"',
+    'This name is already taken': 'Это имя уже занято',
     'Easy': 'Лёгкий',
     'Normal': 'Нормальный',
     'Hard': 'Сложный',

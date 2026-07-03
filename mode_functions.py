@@ -64,10 +64,10 @@ def mode_party(name, cities_list, base, lang):
                 game_count=int(game_count)
                 break
             except ValueError:
-                print(translator('Error!!!', lang))
+                clear_screen()
         else:
-            print(translator('Error!!!', lang))
-
+            clear_screen()
+            
     max_points=choose_parameter(lang)
     clear_screen()
     for _ in range(game_count-1):
