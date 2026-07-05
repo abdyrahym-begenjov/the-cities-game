@@ -67,7 +67,8 @@ def mode_party(name, cities_list, base, lang):
                 clear_screen()
         else:
             clear_screen()
-            
+    
+    clear_screen()
     max_points=choose_parameter(lang)
     clear_screen()
     for _ in range(game_count-1):

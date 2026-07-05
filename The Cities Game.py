@@ -16,13 +16,10 @@ while True:
         clear_screen()
 
     if name=='':
-        name=enter_name(data, lang)
+        name=enter_name(data, base, lang)
         clear_screen()
-    
-    if name not in base:
-        base[name]=[0, 0]
 
-    print(translator('The Cities Game 🏙️', lang))
+    print(translator('The Cities Game  🏙️', lang))
     print(f'{translator('Creator: Abdyrahym Begenjov', lang)}     (GitHub: abdyrahym-begenjov)')
     print(translator('Game      Rules      Highscores      Settings      Exit', lang))
     mode=input(translator('Choose a game mode: ', lang))
@@ -36,6 +33,8 @@ while True:
                 mode_game=new_word(mode_game, lang)
                 if mode_game=='Infinity' or mode_game=='Party':
                     break
+                else:
+                    clear_screen()
             clear_screen()
 
             if mode_game=='Party':
@@ -68,7 +67,7 @@ while True:
                 change=new_word(change, lang)
                 match change:
                     case 'Name':
-                        name=enter_name(data, lang)
+                        name=enter_name(data, base, lang)
                         clear_screen()
                     case 'Language':
                         lang, cities_list=enter_lang(data)

@@ -13,8 +13,9 @@ def clear_screen():
         run(['clear'])
 
 def enter_lang(data):
-    print('English |  Русский')
+    clear_screen()
     while True:
+        print('English |  Русский')
         chosen_language=input()
         chosen_language=chosen_language.title().strip()
         match chosen_language:
@@ -27,26 +28,40 @@ def enter_lang(data):
                 cities_list=pyread('cities.json')
                 break
             case _:
-                continue
+                clear_screen()
     
     data['language']=lang
     data['cities']=cities_list
     pywrite('data.json', data)
     return lang, cities_list
 
-def enter_name(data, lang):
+def enter_name(data, base, lang):
+    clear_screen()
     while True:
         name=input(translator('Enter your name: ', lang))
-        if name!='':
+        name=name.strip()
+        if name=='':
+            clear_screen()
+            print(translator('Error!!!', lang))
+        elif len(name)>16:
+            clear_screen()
+            print(translator('The name must not exceed 16 characters', lang))
+        else:
             data['name']=name
             pywrite('data.json', data)
+            if name not in base:
+                base[name]=[0, 0]
+                pywrite('base.json', base)
             return name
 
 def game(p, lst1, base, lang):
     while True:
         name=input(f'[{p[0]}] {translator('Enter name: ', lang)}')
+        name=name.strip()
         if name=='':
             print(translator('Error!!!', lang))
+        elif len(name)>16:
+            print(translator('The name must not exceed 16 characters', lang))
         elif name in lst1:
             print(translator('This name is already taken', lang))
         else:
@@ -107,7 +122,7 @@ def choose_parameter(lang):
                 max_points=30
                 break
             case _:
-                print(translator('Error!!!', lang))
+                clear_screen()
     return max_points
 
 def star(points, lang):
@@ -128,6 +143,7 @@ def star(points, lang):
             return translator('Loser!!!', lang)
 
 def draw_leaderboard(base, lang):
+    print(translator('LEADERBOARD:', lang))
     base=list(base.items())
     base.sort(key=lambda x: x[1][0]+x[1][1], reverse=True)
     base=dict(base)
